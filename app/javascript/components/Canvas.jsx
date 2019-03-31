@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Container, Row, Col, ButtonGroup, Button} from 'react-bootstrap';
+import {Container, Row, Col, Button} from 'react-bootstrap';
 import {fabric} from 'fabric';
 import Toolbox from './Toolbox';
 
@@ -36,15 +36,17 @@ class Canvas extends Component {
           <Col sm={12} md={8}>
             <canvas id="canvas" />
           </Col>
-          <Col sm={12} md={4}>
+          <Col className="d-flex flex-column justify-content-between" sm={12} md={4}>
             <Toolbox>
-              <Button variant='primary' onClick={() => this.addText()}>Add text object</Button>
-              <Button className="mt-2" variant='danger' onClick={() => this.removeText()}>Delete text object</Button>
+              <Button id="create-text" variant="primary" onClick={() => this.addText()}>Add text</Button>
+              <Button id="remove-text" className="mt-2" variant="danger" onClick={() => this.removeText()}>Delete selected text</Button>
             </Toolbox>
+            <textarea name="" id="log-box" cols="30" rows="10" readOnly></textarea>
           </Col>
         </Row>
       </Container>
     )
   }
 }
+
 export default Canvas;

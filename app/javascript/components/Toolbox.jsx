@@ -16,6 +16,7 @@ class Toolbox extends Component {
     return (
       <div>
         <Button
+          id="open-toolbox"
           onClick={() => this.setState({ open: !open })}
           aria-controls="toolbox-controls"
           aria-expanded={open}
